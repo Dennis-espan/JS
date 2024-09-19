@@ -5,8 +5,8 @@ const produto=document.querySelectorAll('.andes-money-amount.andes-money-amount-
 
 // Filtra e exibe os preços abaixo de 300R$
 produto.forEach(pspan => {
-    const ptexto = pspan.textContent.trim(); // Remove espaços em branco
-    const preco = parseFloat(ptexto.replace('R$', '').replace('.', '').replace(',', '.').trim()); // Formata o preço
+    let ptexto = pspan.textContent.trim(); // Remove espaços em branco
+    let preco = parseFloat(ptexto.replace('R$', '').replace('.', '').replace(',', '.').trim()); // Formata o preço
 
     if (preco < 300) {
         console.log(pspan); // Exibe o elemento
