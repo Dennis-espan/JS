@@ -13,3 +13,21 @@ produto.forEach(pspan => {
         console.log(ptexto); // Exibe o conteúdo do elemento (no caso o preço)
     }
 });
+
+// Abaixo eu repito o codigo mas para o site joiasprime.com.br, porém eu puxo o card do produto antes de puxar o preço
+
+const produtos = document.querySelectorAll('.product-card');
+
+produtos.forEach(produto => {
+    let precoParaTexto = produto.querySelector('.product-card__price-to');
+        let ptexto = precoParaTexto.textContent.trim();
+
+        if (ptexto.includes('R$')) {
+            const preco = parseFloat(ptexto.replace('R$', '').replace('.', '').replace(',', '.').trim());
+
+            if (preco < 600) {
+                console.log(produto);
+                console.log(ptexto);         
+        }
+    }
+});
