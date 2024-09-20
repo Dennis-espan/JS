@@ -22,11 +22,12 @@ produtos.forEach(produto => {
     let precoParaTexto = produto.querySelector('.product-card__price-to');
     let ptexto = precoParaTexto.textContent.trim();
     let preco = parseFloat(ptexto.replace('R$', '').replace('.', '').replace(',', '.').trim());
-
-        if (preco < 600) {
-            let nomeProduto = produto.querySelector('.product-card__title').textContent.trim();
+    let nomeProduto = produto.querySelector('.product-card__title').textContent.trim();
+        
+            if (preco < 600) {
             console.log(`Produto: ${nomeProduto}`);
             console.log(`Preço: ${ptexto}`);
       
     }
 });
+
